@@ -56,3 +56,25 @@ def create_product(product: Product):
     return product.save()
 
 
+@app.get('/products/{pk}')
+def get_product(pk: str):
+    """
+    :arg:
+        pk : string containing the primary key of a product.
+
+    returns:
+        The product of the given primary key.
+    """
+    return Product.get(pk)
+
+
+@app.delete('/products/{pk}')
+def delete_product(pk: str):
+    """
+    :arg:
+        pk : string containing the primary key of a product.
+
+    returns:
+
+    """
+    return Product.delete(pk)

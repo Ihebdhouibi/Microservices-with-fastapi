@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from redis_om import get_redis_connection, HashModel
 
+app = FastAPI()
+
 redis = get_redis_connection(
     host="redis-11349.c135.eu-central-1-1.ec2.cloud.redislabs.com",
     port=11349,
@@ -19,3 +21,26 @@ class Product(HashModel):
         database = redis
 
 
+@app.get('/products')
+def get_all_products():
+    """
+    This function will return the primary keys of all the products stored in our database
+    :return:
+    """
+    return [format(k) for k in Product.all_pks()]
+
+def format(pk: str):
+    """
+    :arg
+        pk : Primary key of a product, of type string.
+
+    returns: a dict containing product attributes
+    """
+    product = Product.get(pk)
+
+    return {
+        'id': product.pk,
+        'name': product.name,
+        'price': product.price,
+        'quantity': product.quantity,
+    }

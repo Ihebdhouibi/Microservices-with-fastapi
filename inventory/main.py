@@ -44,3 +44,15 @@ def format(pk: str):
         'price': product.price,
         'quantity': product.quantity,
     }
+
+
+@app.post('/products')
+def create_product(product: Product):
+    """
+    :arg:
+        Product : An instance of Product class.
+    :return:
+    """
+    return product.save()
+
+

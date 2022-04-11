@@ -23,8 +23,17 @@
 
 ## <a name="about"></a>About the project 
 
-This is my first project with FastAPI microservices, it is a simple web app that offers users the ability to purchase
-products. <br>
+<p>
+Microservice is the approach of breaking down large monolith application into individual applications specializing
+in a specific service/functionality. <br>
+This approach is often known as <b> Service-Oriented Architecture </b> or <b>SOA</b>.<br>
+In a microservice architecture, the application is broken down into several separate services that run in separate processes.
+There is a different database for different functionality of the application and the services communicate with each other using the HTTP, AMQP, or a binary protocol like TCP, depending on the nature of each service. 
+<br> <br>
+This is a simple e-shop app that uses microservices, the aim of this project is to gain hands-on-experience developing 
+microservices using python.
+</p>
+
 
 ## <a name="TechStack"></a>Tech Stack
 ***Client :*** React <br>

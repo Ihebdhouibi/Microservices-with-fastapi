@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b2d2caf-c112-47e1-8eb4-b3eae3b23129" name="Default Changelist" comment="added project shields" />
+    <list default="true" id="9b2d2caf-c112-47e1-8eb4-b3eae3b23129" name="Default Changelist" comment="added project shields">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

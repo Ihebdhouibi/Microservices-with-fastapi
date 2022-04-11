@@ -18,8 +18,11 @@ while True:
             for result in results:
                 obj = result[1][0][1]
                 product = Product.get(obj['product_id'])
-                product.quantity -= int(obj['quantity'])
-                product.save()
+                if product:
+                    product.quantity -= int(obj['quantity'])
+                    product.save()
+                else:
+                    redis.xadd('refund-order', obj, '*')
     except Exception as e:
         print("There is an error consuming event : \n "+str(e))
     time.sleep(1)

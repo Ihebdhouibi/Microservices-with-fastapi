@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export const Wrapper = props => {
     return <>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -27,7 +29,7 @@ export const Wrapper = props => {
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
                                     <span data-feather="shopping-cart"></span>
-                                    Products
+                                    <Link to={"/"}>Products</Link>
                                 </a>
                             </li>
 

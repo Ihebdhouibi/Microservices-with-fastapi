@@ -15,6 +15,15 @@ export const Products = () => {
             setProducts(content);
         })();
     }, []);
+
+    const del = async id => {
+        if(window.confirm("Are you sure you want to delete this product ?")){
+            await fetch('http://localhost:8000/products/${id}', {
+                method: 'DELETE'
+            });
+            setProducts(products.filter(p => p.id !== id));
+        }
+    }
     return <Wrapper>
         <div className="pt-3 pb-2 mb-3 border-bottom">
             <Link to={'/create'} className="btn btn-sm btn-outline-secondary">Add</Link>
@@ -38,7 +47,7 @@ export const Products = () => {
                         <td>{product.price}</td>
                         <td>{product.quantity}</td>
                         <td>
-                            <a href="#" className="btn btn-sm btn-outline-secondary">Delete</a>
+                            <a href="#" className="btn btn-sm btn-outline-secondary" onClick={e => del(product.id)}>Delete</a>
                         </td>
                     </tr>
                 })}

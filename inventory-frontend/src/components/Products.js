@@ -18,9 +18,13 @@ export const Products = () => {
 
     const del = async id => {
         if(window.confirm("Are you sure you want to delete this product ?")){
-            await fetch('http://localhost:8000/products/${id}', {
+            await fetch(`http://localhost:8000/products/${id}`, {
                 method: 'DELETE'
             });
+            /* 
+            For debugging
+            console.log(id) 
+            */
             setProducts(products.filter(p => p.id !== id));
         }
     }
@@ -47,7 +51,9 @@ export const Products = () => {
                         <td>{product.price}</td>
                         <td>{product.quantity}</td>
                         <td>
-                            <a href="#" className="btn btn-sm btn-outline-secondary" onClick={e => del(product.id)}>Delete</a>
+                            <a href="#" className="btn btn-sm btn-outline-secondary" onClick={e => del(product.id)}>
+                                Delete
+                            </a>
                         </td>
                     </tr>
                 })}

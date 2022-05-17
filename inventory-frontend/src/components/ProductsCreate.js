@@ -11,9 +11,16 @@ export const ProductsCreate = () => {
     const submit = async e => {
         e.preventDefault();
         
+        const user = {
+            name: name,
+            price: price,
+            quantity: quantity
+        }
+        console.log(user)
+
         await fetch('http://localhost:8000/products', {
-            method: "POST",
-            headers: {"Content-type": "application/json"},
+            method: 'POST',
+            headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 name,
                 price,
@@ -34,7 +41,7 @@ return <Wrapper>
             <label>Price</label>
         </div>
         <div className="form-floating pb-3">
-            <input type="number" className="form-control" placeholder="Quantity" onChange={e => setQuantity(e.target.quantity)}/>
+            <input type="number" className="form-control" placeholder="Quantity" onChange={e => setQuantity(e.target.value)}/>
             <label>Quantity</label>
         </div>
             <button className="btn w-100 btn-lg btn-primary" type="submit">Submit</button>

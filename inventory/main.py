@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from redis_om import get_redis_connection, HashModel
 from pydantic import BaseModel
+import logging
 
 app = FastAPI()
 
@@ -87,6 +88,7 @@ def delete_product(pk: str):
     returns:
 
     """
+    logging.info("deleted product")
     return Product.delete(pk)
 
 

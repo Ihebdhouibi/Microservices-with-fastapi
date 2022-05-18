@@ -1,8 +1,22 @@
 # Microservices with FastAPI
 
 <p align="center"> A simple use case of fastapi microservices project 
+<hr width="100px">
 
-[![Forks][forks-shield]][forks-url][![Issues][issues-shield]][issues-url][![Stargazers][stars-shield]][stars-url][![LinkedIn][linkedin-shield]][linkedin-url]
+<br>
+<div align="center">
+
+  ![GitHub Repo stars](https://img.shields.io/github/stars/Ihebdhouibi/Microservices-with-fastapi?style=social)
+  ![GitHub language count](https://img.shields.io/github/languages/count/Ihebdhouibi/Microservices-with-fastapi?style=social)
+  ![Twitter Follow](https://img.shields.io/twitter/follow/dhouibi_iheb?style=social)
+  <br>
+  
+  [![LinkedIn][linkedin-shield]][linkedin-url]
+</div>
+
+
+
+
 </p>
 
 <br>
@@ -15,6 +29,8 @@
   <li><a href="#about">About the project </a></li>
   <li><a href="#TechStack">Tech Stack</a></li>
   <li><a href="#Installation">Installation</a></li>
+  <li><a href="Run">Run project</a></li>
+  <li><a href="Demo">Demo</a></li>
   <li><a href="#License">License</a></li>
   <li><a href="#Contact">Contact</a></li>
   
@@ -31,14 +47,14 @@ In a microservice architecture, the application is broken down into several sepa
 There is a different database for different functionality of the application and the services communicate with each other using the HTTP, AMQP, or a binary protocol like TCP, depending on the nature of each service. 
 <br> <br>
 This is a simple e-shop app that uses microservices, the aim of this project is to gain hands-on-experience developing 
-microservices using python.
+microservices using python FastAPI, communicate with a JS frontend and deploy docker images to a registry.
 </p>
 
 
 ## <a name="TechStack"></a>Tech Stack
-***Client :*** React <br>
+***Client :*** React, Bootstrap <br>
 ***Server :*** Fastapi, Redis <br> 
-
+***CI/CD:*** Docker, Dockerhub
 
 ## <a name="Installation">Installation </a>
 
@@ -57,14 +73,40 @@ Run the following command <br>
     cd Microservices-with-fastapi
     pip install -r requirements.txt
 ``` 
+```bash
+    cd Microservices-with-fastapi/inventory-frontend
+    npm install
+```
+
+## <a name="Run">Run project </a>
+
+To run this project execute the following commands 
+```bash
+    cd Microservices-with-fastapi/inventory
+    uvicorn main:app --reload
+    python consumer.py
+```
+
+```bash
+    cd Microservices-with-fastapi/payment
+    uvicorn main:app --reload --port=8001
+    python consumer.py
+```
+
+```bash
+    cd Microservices-with-fastapi/inventory-frontend
+    npm start
+```
+
+## <a name="Demo">Demo </a>
+You can also run demo version of this project by downloading the Docker images from DockerHub
 
 ## <a name="License">License</a>
 Distributed under the MIT License. See LICENSE.txt for more information.
 
 ## <a name="Contact">Contact</a>
 
-Follow me :point_right: [@dhouibi_iheb](https://twitter.com/dhouibi_iheb) <br>
-Email me :email:  <a href="mailto:iheb.dhouibi@polytechnicien.tn"> iheb.dhouibi@polytechnicien.tn </a>
+Email me :email:  <a href="mailto:iheb.dhouibi@polytechnicien.tn"> iheb.dhouibi@polytechnicien.tn </a> <br><br>
 
 
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge

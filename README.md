@@ -52,7 +52,7 @@ microservices using python FastAPI, communicate with a JS frontend and deploy do
 
 
 ## <a name="TechStack"></a>Tech Stack
-***Client :*** React, Bootstrap <br>
+***Client :*** React, Bootstrcloudap <br>
 ***Server :*** Fastapi, Redis <br> 
 ***CI/CD:*** Docker, Dockerhub
 
@@ -99,7 +99,25 @@ To run this project execute the following commands
 ```
 
 ## <a name="Demo">Demo </a>
-You can also run demo version of this project by downloading the Docker images from DockerHub
+You can also run demo version of this project by pulling the Docker images from DockerHub
+
+```bash
+    docker pull houb94/frontend:1.0
+    docker pull houb94/inventory:1.0
+    docker pull houb94/payment:1.0
+```
+
+After pulling the images run the following command to build containers
+```bash
+    docker compose build
+```
+
+Now that the containers are built, run the following command
+```bash
+    docker compose up
+```
+
+All you need to do now is to go to localhost:3000 
 
 ## <a name="License">License</a>
 Distributed under the MIT License. See LICENSE.txt for more information.

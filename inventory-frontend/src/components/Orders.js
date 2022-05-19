@@ -26,6 +26,7 @@ export const Orders = () => {
 
         await fetch('http://localhost:8001/orders', {
             method: 'POST',
+            mode: 'no-cors',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 id,

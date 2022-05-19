@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  inventoryService:
+    container_name: inventory
+    image:  inventory:1.0
+    build: 
+      context: ./inventory/
+    ports:
+      - "8000:8000"
+    networks:
+      - MicroservicesNetwork
+  paymentService:
+    container_name: payment 
+    image:  payment:1.0
+    build: 
+      context: ./payment/
+    ports:
+      - "8001:8001"
+    networks:
+      - MicroservicesNetwork
+  frontend:
+    container_name: frontend
+    image: frontend:1.0
+    build:
+      context: ./inventory-frontend/
+    ports:
+      - "3000:3000"
+    networks:
+      - MicroservicesNetwork
+    depends_on:
+      - inventoryService
+      - paymentService
+networks:
+  MicroservicesNetwork:
+    driver: bridge

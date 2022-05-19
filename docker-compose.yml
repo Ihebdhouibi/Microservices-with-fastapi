@@ -2,7 +2,7 @@ version: "3.9"
 services:
   inventoryService:
     container_name: inventory
-    image:  inventory:1.0
+    image:  ${DOCKER_ACCT}/inventory:1.0
     build: 
       context: ./inventory/
     ports:
@@ -11,7 +11,7 @@ services:
       - MicroservicesNetwork
   paymentService:
     container_name: payment 
-    image:  payment:1.0
+    image:  ${DOCKER_ACCT}/payment:1.0
     build: 
       context: ./payment/
     ports:
@@ -20,7 +20,7 @@ services:
       - MicroservicesNetwork
   frontend:
     container_name: frontend
-    image: frontend:1.0
+    image: ${DOCKER_ACCT}/frontend:1.0
     build:
       context: ./inventory-frontend/
     ports:

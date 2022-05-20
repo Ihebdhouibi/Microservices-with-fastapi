@@ -1,11 +1,11 @@
 # Microservices with FastAPI
 
 <p align="center"> A simple use case of fastapi microservices project 
-<hr width="100px">
+
 
 <br>
 <div align="center">
-
+    <hr width="100px">
   ![GitHub Repo stars](https://img.shields.io/github/stars/Ihebdhouibi/Microservices-with-fastapi?style=social)
   ![GitHub language count](https://img.shields.io/github/languages/count/Ihebdhouibi/Microservices-with-fastapi?style=social)
   ![Twitter Follow](https://img.shields.io/twitter/follow/dhouibi_iheb?style=social)
